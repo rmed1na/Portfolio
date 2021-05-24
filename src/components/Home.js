@@ -7,6 +7,7 @@ import gitHubGoldIcon from '../media/images/github-gold.png';
 import linkedInGoldIcon from '../media/images/linkedin-gold.png';
 import nugetGoldIcon from '../media/images/nuget-gold.png';
 import instagramGoldIcon from '../media/images/instagram-gold.png';
+import icon_mail from '../media/images/mail.svg';
 
 const Home = () => {
     return (
@@ -28,7 +29,9 @@ const Home = () => {
                 <a href='https://www.instagram.com/rmed1na/' target='_blank'>
                     <img src={instagramGoldIcon} alt='Instagram'/>
                 </a>
-
+                <a href='mailto:rolando.ms@outlook.com'>
+                    <img src={icon_mail} alt='email'/>
+                </a>
             </div>
 
             <p className='home-p'>Just a tech enthusiast who finds joy in solving real life problems <br/>with a few bytes of code</p>
