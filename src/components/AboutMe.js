@@ -13,7 +13,7 @@ const AboutMe = () => {
                 <p className='aboutme-p right'>
                     Based in Panama, bridge of the world and home of a wide variety of cultures.<br/><br/>
                     I've been writing code since 2015. <br/><br/>
-                    Over the years, I've had the privilege of working on a few big corporations, mainly focused on retail and healthcare (two very interesting fields), delivering high quality software that solves a large variety of business issues or needs.<br/><br/>
+                    Over the years, I've had the privilege of working on a few corporations, mainly focused on retail and healthcare (two very interesting fields), delivering high quality software that solves a large variety of business issues or needs.<br/><br/>
 
                     Coffee is always my main development tool.<br/>
                     Music lover.<br/>
