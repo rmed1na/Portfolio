@@ -40,6 +40,8 @@
 
 .contact input[type=text], .contact input[type=email] {
     border-bottom: 1px solid #526B66;
+    width: 60%;
+    margin-left: 0;
 }
 
 .contact textarea {
@@ -59,4 +61,5 @@
 .contact input[type=button]:active {
     box-shadow: none;
     transition: 0.1s;
+    background-color: #19201F;
 }
