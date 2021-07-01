@@ -36,6 +36,7 @@ namespace PortfolioAPI.Controllers
         [Route("send")]
         public async Task<bool> SendMailAsync(SendMailRequest request)
         {
+            //TODO: Register a log
             ValidateMailRequest(request);
 
             var mailSettings = await _mailRepository.GetSettingAsync(DEFAULT_MAIL_PROVIDER_CODE);
