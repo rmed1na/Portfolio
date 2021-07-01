@@ -63,3 +63,15 @@
     transition: 0.1s;
     background-color: #19201F;
 }
+
+.contact label.error.hidden {
+    display: none;
+}
+
+.contact label.error, .contact label.apiresponse.error {
+    color: #FF715C;
+}
+
+.contact label.apiresponse {
+    color: #7DD49A;
+}
