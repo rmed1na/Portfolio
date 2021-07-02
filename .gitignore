@@ -5,9 +5,7 @@
 ################################################################################
 # Backend
 ################################################################################
-/api/PortfolioAPI/PortfolioAPI/appsettings.json
 /api/PortfolioAPI/PortfolioAPI/bin/
-api/PortfolioAPI/PortfolioAPI/Properties/launchSettings.json
 
 *.swp
 *.*~
