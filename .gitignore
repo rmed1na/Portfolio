@@ -6,6 +6,7 @@
 # Backend
 ################################################################################
 /api/PortfolioAPI/PortfolioAPI/bin/
+.dtbcache.v2
 
 *.swp
 *.*~
