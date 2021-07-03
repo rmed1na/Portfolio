@@ -9,6 +9,7 @@ const DEFAULT_STATE = {
     subject: "Portfolio - New message!",
     nameErrorVisibility: "hidden",
     emailErrorVisibility: "hidden",
+    emailErrorMessage: "",
     messageErrorVisibility: "hidden",
     apiResponseMessage: "",
     apiResponseSucceeded: true
@@ -18,6 +19,8 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 const API_ENDPOINT_BASE = process.env.REACT_APP_API_ENDPOINT_BASE;
 const API_ENDPOINT_MAIL = process.env.REACT_APP_API_ENDPOINT_MAIL;
 const EMAIL_DESTINATION = process.env.REACT_APP_EMAIL_TO;
+
+let mailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 class Contact extends React.Component {
     constructor() {
@@ -30,6 +33,7 @@ class Contact extends React.Component {
         this.setEmail = this.setEmail.bind(this);
         this.setNameErrorVisibility = this.setNameErrorVisibility.bind(this);
         this.setEmailErrorVisibility = this.setEmailErrorVisibility.bind(this);
+        this.setEmailErrorMessage = this.setEmailErrorMessage.bind(this);
         this.setMessageErrorVisibility = this.setMessageErrorVisibility.bind(this);
         this.setApiResponseSucceeded = this.setApiResponseSucceeded.bind(this);
         this.setApiResponseMessage = this.setApiResponseMessage.bind(this);
@@ -45,6 +49,15 @@ class Contact extends React.Component {
         }
 
         if (!this.state.email) {
+            this.setEmailErrorMessage("* Please enter your email");
+            this.setEmailErrorVisibility("unhidden");
+            return;
+        } else {
+            this.setEmailErrorVisibility("hidden");
+        }
+
+        if (!this.state.email.match(mailFormat) || !this.state.email.includes('@') || !this.state.email.includes('.')) {
+            this.setEmailErrorMessage("* Please enter a valid email address");
             this.setEmailErrorVisibility("unhidden");
             return;
         } else {
@@ -109,6 +122,10 @@ class Contact extends React.Component {
         this.setState({ emailErrorVisibility: value });
     }
 
+    setEmailErrorMessage(value) {
+        this.setState({ emailErrorMessage: value });
+    }
+
     setMessageErrorVisibility(value) {
         this.setState({ messageErrorVisibility: value });
     }
@@ -134,7 +151,7 @@ class Contact extends React.Component {
                  <label className={`error name ${this.state.nameErrorVisibility}`} style={{display: ''}}>* Please enter your name</label>
                  
                  <input type='email' placeholder='Your email' value={this.state.email} onChange={this.setEmail}/>
-                 <label className={`error email ${this.state.emailErrorVisibility}`} style={{display: ''}}>* Please enter your email</label>
+                 <label className={`error email ${this.state.emailErrorVisibility}`} style={{display: ''}}>{this.state.emailErrorMessage}</label>
 
                  <textarea placeholder='Your message' value={this.state.message} onChange={this.setMessage}></textarea>
                  <label className={`error message ${this.state.messageErrorVisibility}`} style={{display: ''}}>* Please enter your message</label>
