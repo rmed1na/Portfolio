@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.820f2f98.chunk.css",
+    "main.js": "/static/js/main.31494f3d.chunk.js",
+    "main.js.map": "/static/js/main.31494f3d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b83279d6.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b83279d6.js.map",
+    "static/js/2.db3a694c.chunk.js": "/static/js/2.db3a694c.chunk.js",
+    "static/js/2.db3a694c.chunk.js.map": "/static/js/2.db3a694c.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.820f2f98.chunk.css.map": "/static/css/main.820f2f98.chunk.css.map",
+    "static/js/2.db3a694c.chunk.js.LICENSE.txt": "/static/js/2.db3a694c.chunk.js.LICENSE.txt",
+    "static/media/Git_icon.dd8f1dca.svg": "/static/media/Git_icon.dd8f1dca.svg",
+    "static/media/HTML5_Badge.5804150e.svg": "/static/media/HTML5_Badge.5804150e.svg",
+    "static/media/NET_Core_Logo.a62fcf99.svg": "/static/media/NET_Core_Logo.a62fcf99.svg",
+    "static/media/NET_Logo.18c10050.svg": "/static/media/NET_Logo.18c10050.svg",
+    "static/media/React-icon.3adc4d15.svg": "/static/media/React-icon.3adc4d15.svg",
+    "static/media/aspnetcore.74fe3b26.svg": "/static/media/aspnetcore.74fe3b26.svg",
+    "static/media/chat.32cdc460.svg": "/static/media/chat.32cdc460.svg",
+    "static/media/csharp.72d6dcc1.svg": "/static/media/csharp.72d6dcc1.svg",
+    "static/media/css3.a970faff.svg": "/static/media/css3.a970faff.svg",
+    "static/media/docker.fec5c368.svg": "/static/media/docker.fec5c368.svg",
+    "static/media/ef-core-logo.9601fa8c.png": "/static/media/ef-core-logo.9601fa8c.png",
+    "static/media/github-gold.5f214586.png": "/static/media/github-gold.5f214586.png",
+    "static/media/instagram-gold.1d0b604f.png": "/static/media/instagram-gold.1d0b604f.png",
+    "static/media/javascript.61c1fa6b.svg": "/static/media/javascript.61c1fa6b.svg",
+    "static/media/mail.1ffd76ac.svg": "/static/media/mail.1ffd76ac.svg",
+    "static/media/microsoft-sql-server.d4f90b22.png": "/static/media/microsoft-sql-server.d4f90b22.png",
+    "static/media/mysql.aa790b3c.png": "/static/media/mysql.aa790b3c.png",
+    "static/media/redis.91eb321d.png": "/static/media/redis.91eb321d.png",
+    "static/media/rolandomedina-2.d7a79a7b.jpg": "/static/media/rolandomedina-2.d7a79a7b.jpg",
+    "static/media/visualstudio.6ca64e46.png": "/static/media/visualstudio.6ca64e46.png",
+    "static/media/vscode.4506ee50.png": "/static/media/vscode.4506ee50.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b83279d6.js",
+    "static/js/2.db3a694c.chunk.js",
+    "static/css/main.820f2f98.chunk.css",
+    "static/js/main.31494f3d.chunk.js"
+  ]
+}
