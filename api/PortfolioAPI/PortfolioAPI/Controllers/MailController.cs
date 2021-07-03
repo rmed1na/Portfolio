@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 namespace PortfolioAPI.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("api/v1/mail")]
     public class MailController : ControllerBase
     {
@@ -32,7 +33,6 @@ namespace PortfolioAPI.Controllers
         /// <param name="request">Request object</param>
         /// <returns></returns>
         [HttpPost]
-        [Authorize]
         [Route("send")]
         public async Task<bool> SendMailAsync(SendMailRequest request)
         {
@@ -80,7 +80,15 @@ namespace PortfolioAPI.Controllers
         [Route("provider/register")]
         public async Task RegisterProviderAsync(RegisterProviderRequest request)
         {
-            //TODO: Validate request is OK
+            if (request.ProviderCode == MailProviderCode.Unknown)
+                throw new ArgumentException("Invalid mail provider code");
+
+            if (request.Port == default(int))
+                throw new ArgumentException("A port must be defined");
+
+            if (string.IsNullOrWhiteSpace(request.Sender) || string.IsNullOrWhiteSpace(request.HostServer) || string.IsNullOrWhiteSpace(request.Password))
+                throw new ArgumentException("A sender, host server and password must be defined");
+
             await _mailRepository.AddSettingAsync(new MailSetting
             {
                 CreatedDate = DateTime.UtcNow,
@@ -91,6 +99,23 @@ namespace PortfolioAPI.Controllers
                 Sender = request.Sender,
                 Password = EncryptionUtility.Encrypt(request.Password)
             });
+        }
+
+        [HttpPut]
+        [Route("provider/update")]
+        public async Task UpdateProviderAsync(RegisterProviderRequest request)
+        {
+            var setting = await _mailRepository.GetSettingAsync(request.ProviderCode);
+
+            if (setting == null)
+                throw new ArgumentException($"Mail provider not found");
+
+            setting.Host = request.HostServer ?? setting.Host;
+            setting.Port = request.Port;
+            setting.Sender = request.Sender;
+            setting.Password = EncryptionUtility.Encrypt(request.Password);
+
+            await _mailRepository.UpdateSettingAsync(setting);
         }
 
         [HttpGet]

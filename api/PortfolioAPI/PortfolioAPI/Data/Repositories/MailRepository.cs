@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PortfolioAPI.Data.Models;
 using PortfolioAPI.Models.Enums;
+using System;
 using System.Threading.Tasks;
 
 namespace PortfolioAPI.Data.Repositories
@@ -14,6 +15,12 @@ namespace PortfolioAPI.Data.Repositories
         public async Task AddSettingAsync(MailSetting setting)
         {
             await _context.MailSettings.AddAsync(setting);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateSettingAsync(MailSetting setting)
+        {
+            setting.UpdatedDate = DateTime.UtcNow;
             await _context.SaveChangesAsync();
         }
 

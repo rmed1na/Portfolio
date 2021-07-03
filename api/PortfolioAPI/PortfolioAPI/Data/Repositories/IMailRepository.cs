@@ -8,6 +8,7 @@ namespace PortfolioAPI.Data.Repositories
     {
         #region Settings
         Task AddSettingAsync(MailSetting setting);
+        Task UpdateSettingAsync(MailSetting setting);
         Task<MailSetting> GetSettingAsync(MailProviderCode providerCode);
         #endregion
     }
